@@ -32,11 +32,11 @@ export async function getGalleryLinks(): Promise<Gallery[]> {
     },
     {
       id: 3,
-      title: "Client Project - December 2024",
-      url: "https://example.com/gallery3",
-      thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=3270&auto=format&fit=crop",
-      description: "Final deliverables for client XYZ",
-      photoCount: 36,
+      title: "POP CULTR - ASC WEEK 2025",
+      url: "https://ashesistudentcouncil-pr.pixieset.com/popcultrascweek25/",
+      thumbnail: "/ASC-WEEK-66.jpg",
+      description: "Highlights from Popular Culture Day",
+      photoCount: 136,
     },
     {
       id: 4,
