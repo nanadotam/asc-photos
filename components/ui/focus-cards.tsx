@@ -12,11 +12,13 @@ export const Card = React.memo(
     index,
     hovered,
     setHovered,
+    onClick,
   }: {
-    card: any
+    card: FocusCard
     index: number
     hovered: number | null
     setHovered: React.Dispatch<React.SetStateAction<number | null>>
+    onClick?: () => void
   }) => (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -27,7 +29,14 @@ export const Card = React.memo(
         ease: [0.22, 1, 0.36, 1],
       }}
     >
-      <Link href={card.url} target="_blank" rel="noopener noreferrer">
+      <Link 
+        href={card.url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        onClick={(e) => {
+          onClick?.()
+        }}
+      >
         <div
           onMouseEnter={() => setHovered(index)}
           onMouseLeave={() => setHovered(null)}
@@ -116,13 +125,25 @@ export type FocusCard = {
   photoCount?: number
 }
 
-export function FocusCards({ cards }: { cards: FocusCard[] }) {
+interface FocusCardsProps {
+  cards: FocusCard[]
+  onCardClick?: (card: FocusCard) => void
+}
+
+export function FocusCards({ cards, onCardClick }: FocusCardsProps) {
   const [hovered, setHovered] = useState<number | null>(null)
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
       {cards.map((card, index) => (
-        <Card key={card.id} card={card} index={index} hovered={hovered} setHovered={setHovered} />
+        <Card 
+          key={card.id} 
+          card={card} 
+          index={index} 
+          hovered={hovered} 
+          setHovered={setHovered}
+          onClick={() => onCardClick?.(card)}
+        />
       ))}
     </div>
   )

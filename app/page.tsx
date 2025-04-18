@@ -1,16 +1,25 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import { getGalleryLinks } from "@/lib/gallery-data"
 import ProfileHeader from "@/components/profile-header"
 import ThemeToggle from "@/components/theme-toggle"
 import { motion } from "framer-motion"
 import { FocusCards, type FocusCard } from "@/components/ui/focus-cards"
+import { usePageTracking } from './hooks/usePageTracking'
+import { event } from './lib/gtag'
+
+// Create a separate component for the tracking
+function PageTracker() {
+  usePageTracking()
+  return null
+}
 
 export default function Home() {
   const [galleryLinks, setGalleryLinks] = useState<FocusCard[]>([])
   const [loading, setLoading] = useState(true)
-
+  
+  // Wrap the tracking in Suspense
   useEffect(() => {
     const fetchData = async () => {
       const data = await getGalleryLinks()
@@ -26,6 +35,14 @@ export default function Home() {
 
       setGalleryLinks(focusCards)
       setLoading(false)
+
+      // Track successful data load
+      event({
+        action: 'galleries_loaded',
+        category: 'Content',
+        label: 'Gallery Data Load Success',
+        value: focusCards.length
+      })
     }
 
     fetchData()
@@ -33,6 +50,10 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center p-4 sm:p-6 md:p-8">
+      <Suspense fallback={null}>
+        <PageTracker />
+      </Suspense>
+      
       <div className="w-full max-w-6xl mx-auto">
         <div className="flex justify-end mb-4">
           <ThemeToggle />
@@ -59,7 +80,17 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <FocusCards cards={galleryLinks} />
+          <FocusCards 
+            cards={galleryLinks} 
+            onCardClick={(card) => {
+              event({
+                action: 'gallery_click',
+                category: 'User Interaction',
+                label: `Gallery: ${card.title}`,
+                value: card.id
+              })
+            }}
+          />
         )}
       </div>
     </main>
