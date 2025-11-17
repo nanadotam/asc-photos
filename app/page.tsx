@@ -96,7 +96,7 @@ export default function Home() {
         <footer className="mt-12 mb-4 text-center text-sm text-gray-600 dark:text-gray-400">
           App Built with ❤️ | See more by {" "}
           <a 
-            href="https://nana-portfolio.netlify.app/" 
+            href="https://nana-portfolio-tan.vercel.app/"
             target="_blank" 
             rel="noopener noreferrer"
             className="hover:text-gray-900 dark:hover:text-red-900 underline transition-colors"
