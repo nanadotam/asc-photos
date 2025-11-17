@@ -70,5 +70,21 @@ export async function getGalleryLinks(): Promise<Gallery[]> {
         description: "Highlights from ASHCHELLA",
         photoCount: 332,
       },
+      {
+        id: 7,
+        title: "Vals Day 2025",
+        url: "https://drive.google.com/drive/folders/1NSHyqZavzEdsmJPQICdFO5V_c1MLMpVn?usp=sharing",
+        thumbnail: "/ASH05539.jpg",
+        description: "Highlights from Vals Day 2025",
+        photoCount: 332,
+      },
+      {
+        id: 8,
+        title: "Ustun Awards 2025",
+        url: "https://drive.google.com/drive/folders/1W7PIQ1ZWnGFHUHoqXY3BzrJh9yq78_9V?usp=sharing",
+        thumbnail: "/ASH08332.jpeg",
+        description: "Highlights from Ustun Awards 2025",
+        photoCount: 332,
+      },
     ]
 }
