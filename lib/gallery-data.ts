@@ -95,7 +95,7 @@ export async function getGalleryLinks(): Promise<Gallery[]> {
         photoCount: 332,
       },
       {
-        id: 9,
+        id: 10,
         title: "Ubora Awards 2025 (PT2)",
         url: "https://theblvckcreator81.pixieset.com/ubora2025/",
         thumbnail: "/UB2.jpeg",
