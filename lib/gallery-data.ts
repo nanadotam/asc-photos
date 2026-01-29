@@ -102,6 +102,14 @@ export async function getGalleryLinks(): Promise<Gallery[]> {
         description: "Highlights from Ubora Awards 2025",
         photoCount: 332,
       },
+    {
+        id: 10,
+        title: "Y2K Neon Party",
+        url: "https://drive.google.com/drive/folders/1kXqHpjsjVDz8ta5B2ezzAjI1YuuSx2g6",
+        thumbnail: "/Y2K Neon DSC08045 Medium.jpeg",
+        description: "Highlights Akwaaba Night Part 2, 2025",
+        photoCount: 332,
+      },
       
     ]
 }
