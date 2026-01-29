@@ -103,11 +103,19 @@ export async function getGalleryLinks(): Promise<Gallery[]> {
         photoCount: 332,
       },
     {
-        id: 10,
+        id: 11,
         title: "Y2K Neon Party",
         url: "https://drive.google.com/drive/folders/1kXqHpjsjVDz8ta5B2ezzAjI1YuuSx2g6",
         thumbnail: "/Y2K Neon DSC08045 Medium.jpeg",
-        description: "Highlights Akwaaba Night Part 2, 2025",
+        description: "Highlights from Akwaaba Night Part 2, 2025",
+        photoCount: 332,
+      },
+    {
+        id: 12,
+        title: "Varsity League",
+        url: "https://drive.google.com/drive/folders/1ZUtJrYj-pEuOl1kF4O60zvZGZNN4R3sh",
+        thumbnail: "/Varsity League AEC04624 Medium.jpeg",
+        description: "Highlights from Varsity League 2025",
         photoCount: 332,
       },
       
