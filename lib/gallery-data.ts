@@ -86,5 +86,22 @@ export async function getGalleryLinks(): Promise<Gallery[]> {
         description: "Highlights from Ustun Awards 2025",
         photoCount: 332,
       },
+      {
+        id: 9,
+        title: "Ubora Awards 2025 (PT1)",
+        url: "https://cyrusthekingsgallery4.pixieset.com/ubora2025/",
+        thumbnail: "/UB1.jpeg",
+        description: "Highlights from Ubora Awards 2025",
+        photoCount: 332,
+      },
+      {
+        id: 9,
+        title: "Ubora Awards 2025 (PT2)",
+        url: "https://theblvckcreator81.pixieset.com/ubora2025/",
+        thumbnail: "/UB2.jpeg",
+        description: "Highlights from Ubora Awards 2025",
+        photoCount: 332,
+      },
+      
     ]
 }
