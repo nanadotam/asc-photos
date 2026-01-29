@@ -59,7 +59,7 @@ export async function getGalleryLinks(): Promise<Gallery[]> {
         title: "CRAZY DAY - ASC WEEK 2025",
         url: "https://ashesistudentcouncil.pixieset.com/crazyday/",
         thumbnail: "/ASC-WEEK-1056.jpg",
-        description: "Highlights from ASHCHELLA",
+        description: "Highlights from Crazy Day 2025",
         photoCount: 332,
       },
       {
